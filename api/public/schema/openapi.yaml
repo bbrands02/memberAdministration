@@ -2963,6 +2963,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Organisation-read'
+      required:
+        - street
+        - number
+        - postal_code
+        - settlement
+        - province
+        - country
+        - organisations
     Address-write:
       type: object
       description: ''
@@ -2989,6 +2997,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Organisation-write'
+      required:
+        - street
+        - number
+        - postal_code
+        - settlement
+        - province
+        - country
+        - organisations
     ExampleEntity-read:
       type: object
       description: ''
@@ -3049,6 +3065,16 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Organisation-read'
+      required:
+        - first_name
+        - last_name
+        - date_of_birth
+        - email
+        - user_name
+        - pass_word
+        - contribution_paid
+        - roles
+        - organisations
     Member-write:
       type: object
       description: ''
@@ -3082,6 +3108,16 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Organisation-write'
+      required:
+        - first_name
+        - last_name
+        - date_of_birth
+        - email
+        - user_name
+        - pass_word
+        - contribution_paid
+        - roles
+        - organisations
     Organisation-read:
       type: object
       description: ''
@@ -3104,6 +3140,11 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Member-read'
+      required:
+        - name
+        - organisation_number
+        - goal
+        - location
     Organisation-write:
       type: object
       description: ''
@@ -3126,6 +3167,11 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Member-write'
+      required:
+        - name
+        - organisation_number
+        - goal
+        - location
     Role-read:
       type: object
       description: ''
@@ -3150,6 +3196,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Member-read'
+      required:
+        - name
+        - requires_different_role
+        - can_view_other_members
+        - can_edit_other_members
+        - can_edit_contribution_status
+        - members
     Role-write:
       type: object
       description: ''
@@ -3174,6 +3227,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Member-write'
+      required:
+        - name
+        - requires_different_role
+        - can_view_other_members
+        - can_edit_other_members
+        - can_edit_contribution_status
+        - members
 host: irc.zaakonline.nl
 servers:
   -
