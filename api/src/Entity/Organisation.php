@@ -61,7 +61,7 @@ class Organisation
     private $goal;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Address", inversedBy="organisations")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Address", inversedBy="organisations", cascade="persist")
      * @ORM\JoinColumn(nullable=false)
      * @Groups({"read","write"})
      * @MaxDepth(1)
@@ -69,7 +69,7 @@ class Organisation
     private $location;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Member", mappedBy="organisations")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Member", mappedBy="organisations", cascade="persist")
      * @Groups({"read","write"})
      * @MaxDepth(1)
      */

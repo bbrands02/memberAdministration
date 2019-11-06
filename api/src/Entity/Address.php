@@ -79,7 +79,7 @@ class Address
     private $country;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Organisation", mappedBy="location")
+     * @ORM\OneToMany(targetEntity="App\Entity\Organisation", mappedBy="location", cascade="persist")
      * @Groups({"read","write"})
      * @MaxDepth(1)
      */

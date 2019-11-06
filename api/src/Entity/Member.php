@@ -85,14 +85,14 @@ class Member
     private $contributionPaid;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Role", inversedBy="members1")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Role", inversedBy="members1", cascade="persist")
      * @Groups({"read","write"})
      * @MaxDepth(1)
      */
     private $roles;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Organisation", inversedBy="members")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Organisation", inversedBy="members", cascade="persist")
      * @Groups({"read","write"})
      * @MaxDepth(1)
      */

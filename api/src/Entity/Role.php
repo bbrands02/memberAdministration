@@ -73,7 +73,7 @@ class Role
     private $canEditContributionStatus;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Member", mappedBy="roles1")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Member", mappedBy="roles1", cascade="persist")
      * @Groups({"read","write"})
      * @MaxDepth(1)
      */
