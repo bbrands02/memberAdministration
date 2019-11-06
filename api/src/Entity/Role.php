@@ -10,6 +10,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Serializer\Annotation\MaxDepth;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ApiResource(
@@ -41,36 +42,42 @@ class Role
      * @ORM\GeneratedValue(strategy="CUSTOM")
      * @ORM\CustomIdGenerator(class="Ramsey\Uuid\Doctrine\UuidGenerator")
      * @Groups({"read","write"})
+     * @Assert\Uuid
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"read","write"})
+     * @Assert\NotBlank
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups({"read","write"})
+     * @Assert\NotBlank
      */
     private $requiresDifferentRole;
 
     /**
      * @ORM\Column(type="boolean")
      * @Groups({"read","write"})
+     * @Assert\NotBlank
      */
     private $canViewOtherMembers;
 
     /**
      * @ORM\Column(type="boolean")
      * @Groups({"read","write"})
+     * @Assert\NotBlank
      */
     private $canEditOtherMembers;
 
     /**
      * @ORM\Column(type="boolean")
      * @Groups({"read","write"})
+     * @Assert\NotBlank
      */
     private $canEditContributionStatus;
 
@@ -78,6 +85,7 @@ class Role
      * @ORM\ManyToMany(targetEntity="App\Entity\Member", mappedBy="roles1", cascade="persist")
      * @Groups({"read","write"})
      * @MaxDepth(1)
+     * @Assert\NotBlank
      */
     private $members;
 

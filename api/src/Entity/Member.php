@@ -10,6 +10,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Serializer\Annotation\MaxDepth;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ApiResource(
@@ -41,48 +42,64 @@ class Member
      * @ORM\GeneratedValue(strategy="CUSTOM")
      * @ORM\CustomIdGenerator(class="Ramsey\Uuid\Doctrine\UuidGenerator")
      * @Groups({"read","write"})
+     * @Assert\Uuid
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"read","write"})
+     * @Assert\NotBlank
      */
     private $firstName;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"read","write"})
+     * @Assert\NotBlank
      */
     private $lastName;
 
     /**
      * @ORM\Column(type="datetime")
      * @Groups({"read","write"})
+     * @Assert\NotBlank
+     * @Assert\DateTime
      */
     private $dateOfBirth;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"read","write"})
+     * @Assert\NotBlank
+     * @Assert\Email(
+     *     message = "The email '{{ value }}' is not a valid email.",
+     *     checkMX = true
+     * )
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"read","write"})
+     * @Assert\NotBlank
      */
     private $userName;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"read","write"})
+     * @Assert\NotBlank
+     * @SecurityAssert\UserPassword(
+     *     message = "Wrong password"
+     * )
      */
     private $passWord;
 
     /**
      * @ORM\Column(type="boolean")
      * @Groups({"read","write"})
+     * @Assert\NotBlank
      */
     private $contributionPaid;
 
@@ -90,6 +107,7 @@ class Member
      * @ORM\ManyToMany(targetEntity="App\Entity\Role", inversedBy="members1", cascade="persist")
      * @Groups({"read","write"})
      * @MaxDepth(1)
+     * @Assert\NotBlank
      */
     private $roles;
 
@@ -97,6 +115,7 @@ class Member
      * @ORM\ManyToMany(targetEntity="App\Entity\Organisation", inversedBy="members", cascade="persist")
      * @Groups({"read","write"})
      * @MaxDepth(1)
+     * @Assert\NotBlank
      */
     private $organisations;
 
