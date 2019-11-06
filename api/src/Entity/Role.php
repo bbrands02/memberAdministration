@@ -56,7 +56,6 @@ class Role
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups({"read","write"})
-     * @Assert\NotBlank
      */
     private $requiresDifferentRole;
 
