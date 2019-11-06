@@ -10,6 +10,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Serializer\Annotation\MaxDepth;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ApiResource(
@@ -41,42 +42,53 @@ class Address
      * @ORM\GeneratedValue(strategy="CUSTOM")
      * @ORM\CustomIdGenerator(class="Ramsey\Uuid\Doctrine\UuidGenerator")
      * @Groups({"read","write"})
+     * @Assert\Uuid
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"read","write"})
+     * @Assert\NotBlank
      */
     private $street;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"read","write"})
+     * @Assert\NotBlank
      */
     private $number;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"read","write"})
+     * @Assert\NotBlank
      */
     private $postalCode;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"read","write"})
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *     min = 1,
+     *     max = 163
+     * )
      */
     private $settlement;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups({"read","write"})
+     * @Assert\NotBlank
      */
     private $province;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"read","write"})
+     * @Assert\NotBlank
      */
     private $country;
 
@@ -84,6 +96,7 @@ class Address
      * @ORM\OneToMany(targetEntity="App\Entity\Organisation", mappedBy="location", cascade="persist")
      * @Groups({"read","write"})
      * @MaxDepth(1)
+     * @Assert\NotBlank
      */
     private $organisations;
 
