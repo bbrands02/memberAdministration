@@ -57,9 +57,9 @@ class Organisation
      * @ORM\Column(type="integer")
      * @Groups({"read","write"})
      * @Assert\NotBlank
-     * @Asser\Length(
+     * @Assert\Length(
      *     min = 8,
-     *     max = 8
+     *     max = 8,
      *      minMessage = "Your organisation number must be {{ limit }} characters long",
      *      maxMessage = "Your organisation number must be {{ limit }} characters long"
      *)
@@ -86,7 +86,6 @@ class Organisation
      * @ORM\ManyToMany(targetEntity="App\Entity\Member", mappedBy="organisations", cascade="persist")
      * @Groups({"read","write"})
      * @MaxDepth(1)
-     * @Assert\NotBlank
      */
     private $members;
 
