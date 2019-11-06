@@ -73,7 +73,7 @@ class Address
      * @Assert\NotBlank
      * @Assert\Length(
      *     min = 1,
-     *     max = 163,
+     *     max = 188,
      *     minMessage = "A settlement must have a name of at least {{ limit }} characters long",
      *     maxMessage = "There exist no settlements with a name more than {{ limit }} characters long"
      * )
