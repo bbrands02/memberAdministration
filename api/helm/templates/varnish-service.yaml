@@ -1,0 +1,21 @@
+{{- if .Values.varnish.enabled -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "name" . }}-{{ .Values.settings.env }}-varnish
+  labels:
+    app.kubernetes.io/name: {{ include "name" . }}-{{ .Values.settings.env }}-varnish
+    app.kubernetes.io/part-of: {{ include "name" . }}-{{ .Values.settings.env }}
+    helm.sh/chart: {{ include "chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}-{{ .Values.settings.env }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+  selector:
+    app.kubernetes.io/name: {{ include "name" . }}-{{ .Values.settings.env }}-varnish
+    app.kubernetes.io/instance: {{ .Release.Name }}-{{ .Values.settings.env }}
+{{- end -}}
