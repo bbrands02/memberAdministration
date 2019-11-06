@@ -2968,7 +2968,6 @@ components:
         - number
         - postal_code
         - settlement
-        - province
         - country
         - organisations
     Address-write:
@@ -3002,7 +3001,6 @@ components:
         - number
         - postal_code
         - settlement
-        - province
         - country
         - organisations
     ExampleEntity-read:
@@ -3145,7 +3143,6 @@ components:
         - organisation_number
         - goal
         - location
-        - members
     Organisation-write:
       type: object
       description: ''
@@ -3173,7 +3170,6 @@ components:
         - organisation_number
         - goal
         - location
-        - members
     Role-read:
       type: object
       description: ''
@@ -3200,7 +3196,6 @@ components:
             $ref: '#/components/schemas/Member-read'
       required:
         - name
-        - requires_different_role
         - can_view_other_members
         - can_edit_other_members
         - can_edit_contribution_status
@@ -3231,7 +3226,6 @@ components:
             $ref: '#/components/schemas/Member-write'
       required:
         - name
-        - requires_different_role
         - can_view_other_members
         - can_edit_other_members
         - can_edit_contribution_status
