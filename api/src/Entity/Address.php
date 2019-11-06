@@ -75,7 +75,7 @@ class Address
      *     min = 1,
      *     max = 163,
      *     minMessage = "A settlement must have a name of at least {{ limit }} characters long",
-     *      maxMessage = "There exist no settlements with a name more than {{ limit }} characters long"
+     *     maxMessage = "There exist no settlements with a name more than {{ limit }} characters long"
      * )
      */
     private $settlement;
@@ -83,7 +83,6 @@ class Address
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups({"read","write"})
-     * @Assert\NotBlank
      */
     private $province;
 

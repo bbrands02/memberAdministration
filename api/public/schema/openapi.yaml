@@ -3145,6 +3145,7 @@ components:
         - organisation_number
         - goal
         - location
+        - members
     Organisation-write:
       type: object
       description: ''
@@ -3172,6 +3173,7 @@ components:
         - organisation_number
         - goal
         - location
+        - members
     Role-read:
       type: object
       description: ''
