@@ -8,6 +8,8 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use ApiPlatform\Core\Annotation\ApiProperty;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Serializer\Annotation\MaxDepth;
 
 
@@ -51,7 +53,7 @@ class ExampleEntity
     /**
 	 * @var string $name The name of this example property
 	 * @example My Group
-	 * 
+	 *
 	 * @Assert\NotNull
 	 * @Assert\Length(
 	 *      max = 255
@@ -65,7 +67,7 @@ class ExampleEntity
     /**
 	 * @var string $description The description of this example property
 	 * @example Is the best group ever
-	 * 
+	 *
 	 * @Assert\Length(
 	 *      max = 2555
 	 * )
