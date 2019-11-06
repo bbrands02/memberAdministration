@@ -48,10 +48,16 @@ class Role
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Member", mappedBy="roles")
      */
+    private $members2;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Member", mappedBy="roles1")
+     */
     private $members;
 
     public function __construct()
     {
+        $this->members2 = new ArrayCollection();
         $this->members = new ArrayCollection();
     }
 
@@ -120,6 +126,7 @@ class Role
         return $this;
     }
 
+
     /**
      * @return Collection|Member[]
      */
@@ -128,24 +135,21 @@ class Role
         return $this->members;
     }
 
-    public function addMember(Member $member): self
+    public function addMembers(Member $members): self
     {
-        if (!$this->members->contains($member)) {
-            $this->members[] = $member;
-            $member->setRoles($this);
+        if (!$this->members->contains($members)) {
+            $this->members[] = $members;
+            $members->addRoles($this);
         }
 
         return $this;
     }
 
-    public function removeMember(Member $member): self
+    public function removeMembers(Member $members): self
     {
-        if ($this->members->contains($member)) {
-            $this->members->removeElement($member);
-            // set the owning side to null (unless already changed)
-            if ($member->getRoles() === $this) {
-                $member->setRoles(null);
-            }
+        if ($this->members->contains($members)) {
+            $this->members->removeElement($members);
+            $members->removeRoles($this);
         }
 
         return $this;
