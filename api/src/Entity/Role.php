@@ -46,18 +46,12 @@ class Role
     private $canEditContributionStatus;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Member", mappedBy="roles")
-     */
-    private $members2;
-
-    /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Member", mappedBy="roles1")
      */
     private $members;
 
     public function __construct()
     {
-        $this->members2 = new ArrayCollection();
         $this->members = new ArrayCollection();
     }
 
