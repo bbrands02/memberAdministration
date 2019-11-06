@@ -2,51 +2,90 @@
 
 namespace App\Entity;
 
+
+use ApiPlatform\Core\Annotation\ApiProperty;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Serializer\Annotation\MaxDepth;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ApiResource()
+ * @ApiResource(
+ *     normalizationContext={"groups"={"read"}, "enable_max_depth"=true},
+ *     denormalizationContext={"groups"={"write"}, "enable_max_depth"=true}
+ * )
  * @ORM\Entity(repositoryClass="App\Repository\RoleRepository")
  */
 class Role
 {
     /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+     * @var \Ramsey\Uuid\UuidInterface
+     *
+     * @ApiProperty(
+     * 	   identifier=true,
+     *     attributes={
+     *         "openapi_context"={
+     *         	   "description" = "The UUID identifier of this object",
+     *             "type"="string",
+     *             "format"="uuid",
+     *             "example"="e2984465-190a-4562-829e-a8cca81aa35d"
+     *         }
+     *     }
+     * )
+     *
+     * @Groups({"read"})
+     * @ORM\Id
+     * @ORM\Column(type="uuid", unique=true)
+     * @ORM\GeneratedValue(strategy="CUSTOM")
+     * @ORM\CustomIdGenerator(class="Ramsey\Uuid\Doctrine\UuidGenerator")
+     * @Groups({"read","write"})
+     * @Assert\Uuid
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"read","write"})
+     * @Assert\NotBlank
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"read","write"})
+     * @Assert\NotBlank
      */
     private $requiresDifferentRole;
 
     /**
      * @ORM\Column(type="boolean")
+     * @Groups({"read","write"})
+     * @Assert\NotBlank
      */
     private $canViewOtherMembers;
 
     /**
      * @ORM\Column(type="boolean")
+     * @Groups({"read","write"})
+     * @Assert\NotBlank
      */
     private $canEditOtherMembers;
 
     /**
      * @ORM\Column(type="boolean")
+     * @Groups({"read","write"})
+     * @Assert\NotBlank
      */
     private $canEditContributionStatus;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Member", mappedBy="roles1")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Member", mappedBy="roles1", cascade="persist")
+     * @Groups({"read","write"})
+     * @MaxDepth(1)
+     * @Assert\NotBlank
      */
     private $members;
 
@@ -55,7 +94,7 @@ class Role
         $this->members = new ArrayCollection();
     }
 
-    public function getId(): ?int
+    public function getId()
     {
         return $this->id;
     }

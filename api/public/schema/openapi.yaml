@@ -32,42 +32,42 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Address'
+                  $ref: '#/components/schemas/Address-read'
             application/ld+json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Address'
+                  $ref: '#/components/schemas/Address-read'
             application/vnd.api+json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Address'
+                  $ref: '#/components/schemas/Address-read'
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Address'
+                  $ref: '#/components/schemas/Address-read'
             application/xml:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Address'
+                  $ref: '#/components/schemas/Address-read'
             application/x-yaml:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Address'
+                  $ref: '#/components/schemas/Address-read'
             text/csv:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Address'
+                  $ref: '#/components/schemas/Address-read'
             text/html:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Address'
+                  $ref: '#/components/schemas/Address-read'
       parameters:
         -
           name: page
@@ -154,28 +154,28 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
             application/json:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
             application/xml:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
             text/csv:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
             text/html:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
           links:
             GetAddressItem:
               parameters:
@@ -190,28 +190,28 @@ paths:
         content:
           application/hal+json:
             schema:
-              $ref: '#/components/schemas/Address'
+              $ref: '#/components/schemas/Address-write'
           application/ld+json:
             schema:
-              $ref: '#/components/schemas/Address'
+              $ref: '#/components/schemas/Address-write'
           application/vnd.api+json:
             schema:
-              $ref: '#/components/schemas/Address'
+              $ref: '#/components/schemas/Address-write'
           application/json:
             schema:
-              $ref: '#/components/schemas/Address'
+              $ref: '#/components/schemas/Address-write'
           application/xml:
             schema:
-              $ref: '#/components/schemas/Address'
+              $ref: '#/components/schemas/Address-write'
           application/x-yaml:
             schema:
-              $ref: '#/components/schemas/Address'
+              $ref: '#/components/schemas/Address-write'
           text/csv:
             schema:
-              $ref: '#/components/schemas/Address'
+              $ref: '#/components/schemas/Address-write'
           text/html:
             schema:
-              $ref: '#/components/schemas/Address'
+              $ref: '#/components/schemas/Address-write'
         description: 'The new Address resource'
       parameters:
         -
@@ -329,28 +329,28 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
             application/json:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
             application/xml:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
             text/csv:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
             text/html:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
         404:
           description: 'Resource not found'
     delete:
@@ -446,28 +446,28 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
             application/json:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
             application/xml:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
             text/csv:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
             text/html:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
         400:
           description: 'Invalid input'
         404:
@@ -476,28 +476,28 @@ paths:
         content:
           application/hal+json:
             schema:
-              $ref: '#/components/schemas/Address'
+              $ref: '#/components/schemas/Address-write'
           application/ld+json:
             schema:
-              $ref: '#/components/schemas/Address'
+              $ref: '#/components/schemas/Address-write'
           application/vnd.api+json:
             schema:
-              $ref: '#/components/schemas/Address'
+              $ref: '#/components/schemas/Address-write'
           application/json:
             schema:
-              $ref: '#/components/schemas/Address'
+              $ref: '#/components/schemas/Address-write'
           application/xml:
             schema:
-              $ref: '#/components/schemas/Address'
+              $ref: '#/components/schemas/Address-write'
           application/x-yaml:
             schema:
-              $ref: '#/components/schemas/Address'
+              $ref: '#/components/schemas/Address-write'
           text/csv:
             schema:
-              $ref: '#/components/schemas/Address'
+              $ref: '#/components/schemas/Address-write'
           text/html:
             schema:
-              $ref: '#/components/schemas/Address'
+              $ref: '#/components/schemas/Address-write'
         description: 'The updated Address resource'
     patch:
       tags:
@@ -546,28 +546,28 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
             application/json:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
             application/xml:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
             text/csv:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
             text/html:
               schema:
-                $ref: '#/components/schemas/Address'
+                $ref: '#/components/schemas/Address-read'
         400:
           description: 'Invalid input'
         404:
@@ -576,28 +576,28 @@ paths:
         content:
           application/hal+json:
             schema:
-              $ref: '#/components/schemas/Address'
+              $ref: '#/components/schemas/Address-write'
           application/ld+json:
             schema:
-              $ref: '#/components/schemas/Address'
+              $ref: '#/components/schemas/Address-write'
           application/vnd.api+json:
             schema:
-              $ref: '#/components/schemas/Address'
+              $ref: '#/components/schemas/Address-write'
           application/json:
             schema:
-              $ref: '#/components/schemas/Address'
+              $ref: '#/components/schemas/Address-write'
           application/xml:
             schema:
-              $ref: '#/components/schemas/Address'
+              $ref: '#/components/schemas/Address-write'
           application/x-yaml:
             schema:
-              $ref: '#/components/schemas/Address'
+              $ref: '#/components/schemas/Address-write'
           text/csv:
             schema:
-              $ref: '#/components/schemas/Address'
+              $ref: '#/components/schemas/Address-write'
           text/html:
             schema:
-              $ref: '#/components/schemas/Address'
+              $ref: '#/components/schemas/Address-write'
         description: 'The updated Address resource'
   /example_entities:
     get:
@@ -1192,6 +1192,587 @@ paths:
             schema:
               $ref: '#/components/schemas/ExampleEntity-write'
         description: 'The updated ExampleEntity resource'
+  /members:
+    get:
+      tags:
+        - Member
+      operationId: getMemberCollection
+      summary: 'Retrieves the collection of Member resources.'
+      responses:
+        200:
+          description: 'Member collection response'
+          content:
+            application/hal+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Member-read'
+            application/ld+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Member-read'
+            application/vnd.api+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Member-read'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Member-read'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Member-read'
+            application/x-yaml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Member-read'
+            text/csv:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Member-read'
+            text/html:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Member-read'
+      parameters:
+        -
+          name: page
+          in: query
+          required: false
+          description: 'The collection page number'
+          schema:
+            type: integer
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+        -
+          name: 'extend[]'
+          required: false
+          description: 'An array of nested objects to include in the return object'
+          in: query
+          schema:
+            type: array
+        -
+          name: 'fields[]'
+          required: false
+          description: 'An array of fields to return in output, wil return all fields is not supplied'
+          in: query
+          schema:
+            type: array
+        -
+          name: validOn
+          required: false
+          description: 'Returns object as valid on a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+        -
+          name: validFrom
+          required: false
+          description: 'Returns objects valid from a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+        -
+          name: validUntil
+          required: false
+          description: 'Returns objects valid until a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+    post:
+      tags:
+        - Member
+      operationId: postMemberCollection
+      summary: 'Creates a Member resource.'
+      responses:
+        201:
+          description: 'Member resource created'
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+            application/x-yaml:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+          links:
+            GetMemberItem:
+              parameters:
+                id: '$response.body#/id'
+              operationId: getMemberItem
+              description: 'The `id` value returned in the response can be used as the `id` parameter in `GET /members/{id}`.'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+      requestBody:
+        content:
+          application/hal+json:
+            schema:
+              $ref: '#/components/schemas/Member-write'
+          application/ld+json:
+            schema:
+              $ref: '#/components/schemas/Member-write'
+          application/vnd.api+json:
+            schema:
+              $ref: '#/components/schemas/Member-write'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Member-write'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Member-write'
+          application/x-yaml:
+            schema:
+              $ref: '#/components/schemas/Member-write'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/Member-write'
+          text/html:
+            schema:
+              $ref: '#/components/schemas/Member-write'
+        description: 'The new Member resource'
+      parameters:
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+  '/members/{id}':
+    get:
+      tags:
+        - Member
+      operationId: getMemberItem
+      summary: 'Retrieves a Member resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+        -
+          name: 'extend[]'
+          required: false
+          description: 'An array of nested objects to include in the return object'
+          in: query
+          schema:
+            type: array
+        -
+          name: 'fields[]'
+          required: false
+          description: 'An array of fields to return in output, wil return all fields is not supplied'
+          in: query
+          schema:
+            type: array
+        -
+          name: validOn
+          required: false
+          description: 'Returns object as valid on a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+        -
+          name: validFrom
+          required: false
+          description: 'Returns objects valid from a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+        -
+          name: validUntil
+          required: false
+          description: 'Returns objects valid until a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+      responses:
+        200:
+          description: 'Member resource response'
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+            application/x-yaml:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+        404:
+          description: 'Resource not found'
+    delete:
+      tags:
+        - Member
+      operationId: deleteMemberItem
+      summary: 'Removes the Member resource.'
+      responses:
+        204:
+          description: 'Member resource deleted'
+        404:
+          description: 'Resource not found'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+    put:
+      tags:
+        - Member
+      operationId: putMemberItem
+      summary: 'Replaces the Member resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+      responses:
+        200:
+          description: 'Member resource updated'
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+            application/x-yaml:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+      requestBody:
+        content:
+          application/hal+json:
+            schema:
+              $ref: '#/components/schemas/Member-write'
+          application/ld+json:
+            schema:
+              $ref: '#/components/schemas/Member-write'
+          application/vnd.api+json:
+            schema:
+              $ref: '#/components/schemas/Member-write'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Member-write'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Member-write'
+          application/x-yaml:
+            schema:
+              $ref: '#/components/schemas/Member-write'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/Member-write'
+          text/html:
+            schema:
+              $ref: '#/components/schemas/Member-write'
+        description: 'The updated Member resource'
+    patch:
+      tags:
+        - Member
+      operationId: patchMemberItem
+      summary: 'Updates the Member resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+      responses:
+        200:
+          description: 'Member resource updated'
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+            application/x-yaml:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Member-read'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+      requestBody:
+        content:
+          application/hal+json:
+            schema:
+              $ref: '#/components/schemas/Member-write'
+          application/ld+json:
+            schema:
+              $ref: '#/components/schemas/Member-write'
+          application/vnd.api+json:
+            schema:
+              $ref: '#/components/schemas/Member-write'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Member-write'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Member-write'
+          application/x-yaml:
+            schema:
+              $ref: '#/components/schemas/Member-write'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/Member-write'
+          text/html:
+            schema:
+              $ref: '#/components/schemas/Member-write'
+        description: 'The updated Member resource'
   /organisations:
     get:
       tags:
@@ -1206,42 +1787,42 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Organisation'
+                  $ref: '#/components/schemas/Organisation-read'
             application/ld+json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Organisation'
+                  $ref: '#/components/schemas/Organisation-read'
             application/vnd.api+json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Organisation'
+                  $ref: '#/components/schemas/Organisation-read'
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Organisation'
+                  $ref: '#/components/schemas/Organisation-read'
             application/xml:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Organisation'
+                  $ref: '#/components/schemas/Organisation-read'
             application/x-yaml:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Organisation'
+                  $ref: '#/components/schemas/Organisation-read'
             text/csv:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Organisation'
+                  $ref: '#/components/schemas/Organisation-read'
             text/html:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Organisation'
+                  $ref: '#/components/schemas/Organisation-read'
       parameters:
         -
           name: page
@@ -1328,28 +1909,28 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
             application/json:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
             application/xml:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
             text/csv:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
             text/html:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
           links:
             GetOrganisationItem:
               parameters:
@@ -1364,28 +1945,28 @@ paths:
         content:
           application/hal+json:
             schema:
-              $ref: '#/components/schemas/Organisation'
+              $ref: '#/components/schemas/Organisation-write'
           application/ld+json:
             schema:
-              $ref: '#/components/schemas/Organisation'
+              $ref: '#/components/schemas/Organisation-write'
           application/vnd.api+json:
             schema:
-              $ref: '#/components/schemas/Organisation'
+              $ref: '#/components/schemas/Organisation-write'
           application/json:
             schema:
-              $ref: '#/components/schemas/Organisation'
+              $ref: '#/components/schemas/Organisation-write'
           application/xml:
             schema:
-              $ref: '#/components/schemas/Organisation'
+              $ref: '#/components/schemas/Organisation-write'
           application/x-yaml:
             schema:
-              $ref: '#/components/schemas/Organisation'
+              $ref: '#/components/schemas/Organisation-write'
           text/csv:
             schema:
-              $ref: '#/components/schemas/Organisation'
+              $ref: '#/components/schemas/Organisation-write'
           text/html:
             schema:
-              $ref: '#/components/schemas/Organisation'
+              $ref: '#/components/schemas/Organisation-write'
         description: 'The new Organisation resource'
       parameters:
         -
@@ -1503,28 +2084,28 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
             application/json:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
             application/xml:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
             text/csv:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
             text/html:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
         404:
           description: 'Resource not found'
     delete:
@@ -1620,28 +2201,28 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
             application/json:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
             application/xml:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
             text/csv:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
             text/html:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
         400:
           description: 'Invalid input'
         404:
@@ -1650,28 +2231,28 @@ paths:
         content:
           application/hal+json:
             schema:
-              $ref: '#/components/schemas/Organisation'
+              $ref: '#/components/schemas/Organisation-write'
           application/ld+json:
             schema:
-              $ref: '#/components/schemas/Organisation'
+              $ref: '#/components/schemas/Organisation-write'
           application/vnd.api+json:
             schema:
-              $ref: '#/components/schemas/Organisation'
+              $ref: '#/components/schemas/Organisation-write'
           application/json:
             schema:
-              $ref: '#/components/schemas/Organisation'
+              $ref: '#/components/schemas/Organisation-write'
           application/xml:
             schema:
-              $ref: '#/components/schemas/Organisation'
+              $ref: '#/components/schemas/Organisation-write'
           application/x-yaml:
             schema:
-              $ref: '#/components/schemas/Organisation'
+              $ref: '#/components/schemas/Organisation-write'
           text/csv:
             schema:
-              $ref: '#/components/schemas/Organisation'
+              $ref: '#/components/schemas/Organisation-write'
           text/html:
             schema:
-              $ref: '#/components/schemas/Organisation'
+              $ref: '#/components/schemas/Organisation-write'
         description: 'The updated Organisation resource'
     patch:
       tags:
@@ -1720,28 +2301,28 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
             application/ld+json:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
             application/vnd.api+json:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
             application/json:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
             application/xml:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
             application/x-yaml:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
             text/csv:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
             text/html:
               schema:
-                $ref: '#/components/schemas/Organisation'
+                $ref: '#/components/schemas/Organisation-read'
         400:
           description: 'Invalid input'
         404:
@@ -1750,38 +2331,622 @@ paths:
         content:
           application/hal+json:
             schema:
-              $ref: '#/components/schemas/Organisation'
+              $ref: '#/components/schemas/Organisation-write'
           application/ld+json:
             schema:
-              $ref: '#/components/schemas/Organisation'
+              $ref: '#/components/schemas/Organisation-write'
           application/vnd.api+json:
             schema:
-              $ref: '#/components/schemas/Organisation'
+              $ref: '#/components/schemas/Organisation-write'
           application/json:
             schema:
-              $ref: '#/components/schemas/Organisation'
+              $ref: '#/components/schemas/Organisation-write'
           application/xml:
             schema:
-              $ref: '#/components/schemas/Organisation'
+              $ref: '#/components/schemas/Organisation-write'
           application/x-yaml:
             schema:
-              $ref: '#/components/schemas/Organisation'
+              $ref: '#/components/schemas/Organisation-write'
           text/csv:
             schema:
-              $ref: '#/components/schemas/Organisation'
+              $ref: '#/components/schemas/Organisation-write'
           text/html:
             schema:
-              $ref: '#/components/schemas/Organisation'
+              $ref: '#/components/schemas/Organisation-write'
         description: 'The updated Organisation resource'
+  /roles:
+    get:
+      tags:
+        - Role
+      operationId: getRoleCollection
+      summary: 'Retrieves the collection of Role resources.'
+      responses:
+        200:
+          description: 'Role collection response'
+          content:
+            application/hal+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Role-read'
+            application/ld+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Role-read'
+            application/vnd.api+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Role-read'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Role-read'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Role-read'
+            application/x-yaml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Role-read'
+            text/csv:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Role-read'
+            text/html:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Role-read'
+      parameters:
+        -
+          name: page
+          in: query
+          required: false
+          description: 'The collection page number'
+          schema:
+            type: integer
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+        -
+          name: 'extend[]'
+          required: false
+          description: 'An array of nested objects to include in the return object'
+          in: query
+          schema:
+            type: array
+        -
+          name: 'fields[]'
+          required: false
+          description: 'An array of fields to return in output, wil return all fields is not supplied'
+          in: query
+          schema:
+            type: array
+        -
+          name: validOn
+          required: false
+          description: 'Returns object as valid on a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+        -
+          name: validFrom
+          required: false
+          description: 'Returns objects valid from a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+        -
+          name: validUntil
+          required: false
+          description: 'Returns objects valid until a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+    post:
+      tags:
+        - Role
+      operationId: postRoleCollection
+      summary: 'Creates a Role resource.'
+      responses:
+        201:
+          description: 'Role resource created'
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+            application/x-yaml:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+          links:
+            GetRoleItem:
+              parameters:
+                id: '$response.body#/id'
+              operationId: getRoleItem
+              description: 'The `id` value returned in the response can be used as the `id` parameter in `GET /roles/{id}`.'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+      requestBody:
+        content:
+          application/hal+json:
+            schema:
+              $ref: '#/components/schemas/Role-write'
+          application/ld+json:
+            schema:
+              $ref: '#/components/schemas/Role-write'
+          application/vnd.api+json:
+            schema:
+              $ref: '#/components/schemas/Role-write'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Role-write'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Role-write'
+          application/x-yaml:
+            schema:
+              $ref: '#/components/schemas/Role-write'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/Role-write'
+          text/html:
+            schema:
+              $ref: '#/components/schemas/Role-write'
+        description: 'The new Role resource'
+      parameters:
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+  '/roles/{id}':
+    get:
+      tags:
+        - Role
+      operationId: getRoleItem
+      summary: 'Retrieves a Role resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+        -
+          name: 'extend[]'
+          required: false
+          description: 'An array of nested objects to include in the return object'
+          in: query
+          schema:
+            type: array
+        -
+          name: 'fields[]'
+          required: false
+          description: 'An array of fields to return in output, wil return all fields is not supplied'
+          in: query
+          schema:
+            type: array
+        -
+          name: validOn
+          required: false
+          description: 'Returns object as valid on a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+        -
+          name: validFrom
+          required: false
+          description: 'Returns objects valid from a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+        -
+          name: validUntil
+          required: false
+          description: 'Returns objects valid until a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+      responses:
+        200:
+          description: 'Role resource response'
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+            application/x-yaml:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+        404:
+          description: 'Resource not found'
+    delete:
+      tags:
+        - Role
+      operationId: deleteRoleItem
+      summary: 'Removes the Role resource.'
+      responses:
+        204:
+          description: 'Role resource deleted'
+        404:
+          description: 'Resource not found'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+    put:
+      tags:
+        - Role
+      operationId: putRoleItem
+      summary: 'Replaces the Role resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+      responses:
+        200:
+          description: 'Role resource updated'
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+            application/x-yaml:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+      requestBody:
+        content:
+          application/hal+json:
+            schema:
+              $ref: '#/components/schemas/Role-write'
+          application/ld+json:
+            schema:
+              $ref: '#/components/schemas/Role-write'
+          application/vnd.api+json:
+            schema:
+              $ref: '#/components/schemas/Role-write'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Role-write'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Role-write'
+          application/x-yaml:
+            schema:
+              $ref: '#/components/schemas/Role-write'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/Role-write'
+          text/html:
+            schema:
+              $ref: '#/components/schemas/Role-write'
+        description: 'The updated Role resource'
+    patch:
+      tags:
+        - Role
+      operationId: patchRoleItem
+      summary: 'Updates the Role resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+      responses:
+        200:
+          description: 'Role resource updated'
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+            application/x-yaml:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Role-read'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+      requestBody:
+        content:
+          application/hal+json:
+            schema:
+              $ref: '#/components/schemas/Role-write'
+          application/ld+json:
+            schema:
+              $ref: '#/components/schemas/Role-write'
+          application/vnd.api+json:
+            schema:
+              $ref: '#/components/schemas/Role-write'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Role-write'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Role-write'
+          application/x-yaml:
+            schema:
+              $ref: '#/components/schemas/Role-write'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/Role-write'
+          text/html:
+            schema:
+              $ref: '#/components/schemas/Role-write'
+        description: 'The updated Role resource'
 components:
   schemas:
-    Address:
+    Address-read:
       type: object
       description: ''
       properties:
         id:
+          description: 'The UUID identifier of this object'
+          type: string
+          format: uuid
+          example: e2984465-190a-4562-829e-a8cca81aa35d
           readOnly: true
-          type: integer
         street:
           type: string
         number:
@@ -1797,7 +2962,49 @@ components:
         organisations:
           type: array
           items:
-            type: string
+            $ref: '#/components/schemas/Organisation-read'
+      required:
+        - street
+        - number
+        - postal_code
+        - settlement
+        - province
+        - country
+        - organisations
+    Address-write:
+      type: object
+      description: ''
+      properties:
+        id:
+          description: 'The UUID identifier of this object'
+          type: string
+          format: uuid
+          example: e2984465-190a-4562-829e-a8cca81aa35d
+          readOnly: true
+        street:
+          type: string
+        number:
+          type: string
+        postal_code:
+          type: string
+        settlement:
+          type: string
+        province:
+          type: string
+        country:
+          type: string
+        organisations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Organisation-write'
+      required:
+        - street
+        - number
+        - postal_code
+        - settlement
+        - province
+        - country
+        - organisations
     ExampleEntity-read:
       type: object
       description: ''
@@ -1825,13 +3032,102 @@ components:
         description:
           description: 'The description of this example property'
           type: string
-    Organisation:
+    Member-read:
       type: object
       description: ''
       properties:
         id:
+          description: 'The UUID identifier of this object'
+          type: string
+          format: uuid
+          example: e2984465-190a-4562-829e-a8cca81aa35d
           readOnly: true
-          type: integer
+        first_name:
+          type: string
+        last_name:
+          type: string
+        date_of_birth:
+          type: string
+          format: date-time
+        email:
+          type: string
+        user_name:
+          type: string
+        pass_word:
+          type: string
+        contribution_paid:
+          type: boolean
+        roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/Role-read'
+        organisations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Organisation-read'
+      required:
+        - first_name
+        - last_name
+        - date_of_birth
+        - email
+        - user_name
+        - pass_word
+        - contribution_paid
+        - roles
+        - organisations
+    Member-write:
+      type: object
+      description: ''
+      properties:
+        id:
+          description: 'The UUID identifier of this object'
+          type: string
+          format: uuid
+          example: e2984465-190a-4562-829e-a8cca81aa35d
+          readOnly: true
+        first_name:
+          type: string
+        last_name:
+          type: string
+        date_of_birth:
+          type: string
+          format: date-time
+        email:
+          type: string
+        user_name:
+          type: string
+        pass_word:
+          type: string
+        contribution_paid:
+          type: boolean
+        roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/Role-write'
+        organisations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Organisation-write'
+      required:
+        - first_name
+        - last_name
+        - date_of_birth
+        - email
+        - user_name
+        - pass_word
+        - contribution_paid
+        - roles
+        - organisations
+    Organisation-read:
+      type: object
+      description: ''
+      properties:
+        id:
+          description: 'The UUID identifier of this object'
+          type: string
+          format: uuid
+          example: e2984465-190a-4562-829e-a8cca81aa35d
+          readOnly: true
         name:
           type: string
         organisation_number:
@@ -1839,7 +3135,105 @@ components:
         goal:
           type: string
         location:
+          $ref: '#/components/schemas/Address-read'
+        members:
+          type: array
+          items:
+            $ref: '#/components/schemas/Member-read'
+      required:
+        - name
+        - organisation_number
+        - goal
+        - location
+    Organisation-write:
+      type: object
+      description: ''
+      properties:
+        id:
+          description: 'The UUID identifier of this object'
           type: string
+          format: uuid
+          example: e2984465-190a-4562-829e-a8cca81aa35d
+          readOnly: true
+        name:
+          type: string
+        organisation_number:
+          type: integer
+        goal:
+          type: string
+        location:
+          $ref: '#/components/schemas/Address-write'
+        members:
+          type: array
+          items:
+            $ref: '#/components/schemas/Member-write'
+      required:
+        - name
+        - organisation_number
+        - goal
+        - location
+    Role-read:
+      type: object
+      description: ''
+      properties:
+        id:
+          description: 'The UUID identifier of this object'
+          type: string
+          format: uuid
+          example: e2984465-190a-4562-829e-a8cca81aa35d
+          readOnly: true
+        name:
+          type: string
+        requires_different_role:
+          type: string
+        can_view_other_members:
+          type: boolean
+        can_edit_other_members:
+          type: boolean
+        can_edit_contribution_status:
+          type: boolean
+        members:
+          type: array
+          items:
+            $ref: '#/components/schemas/Member-read'
+      required:
+        - name
+        - requires_different_role
+        - can_view_other_members
+        - can_edit_other_members
+        - can_edit_contribution_status
+        - members
+    Role-write:
+      type: object
+      description: ''
+      properties:
+        id:
+          description: 'The UUID identifier of this object'
+          type: string
+          format: uuid
+          example: e2984465-190a-4562-829e-a8cca81aa35d
+          readOnly: true
+        name:
+          type: string
+        requires_different_role:
+          type: string
+        can_view_other_members:
+          type: boolean
+        can_edit_other_members:
+          type: boolean
+        can_edit_contribution_status:
+          type: boolean
+        members:
+          type: array
+          items:
+            $ref: '#/components/schemas/Member-write'
+      required:
+        - name
+        - requires_different_role
+        - can_view_other_members
+        - can_edit_other_members
+        - can_edit_contribution_status
+        - members
 host: irc.zaakonline.nl
 servers:
   -

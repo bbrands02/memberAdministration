@@ -2,47 +2,90 @@
 
 namespace App\Entity;
 
+
+use ApiPlatform\Core\Annotation\ApiProperty;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Serializer\Annotation\MaxDepth;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ApiResource()
+ * @ApiResource(
+ *     normalizationContext={"groups"={"read"}, "enable_max_depth"=true},
+ *     denormalizationContext={"groups"={"write"}, "enable_max_depth"=true}
+ * )
  * @ORM\Entity(repositoryClass="App\Repository\OrganisationRepository")
  */
 class Organisation
 {
     /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+     * @var \Ramsey\Uuid\UuidInterface
+     *
+     * @ApiProperty(
+     * 	   identifier=true,
+     *     attributes={
+     *         "openapi_context"={
+     *         	   "description" = "The UUID identifier of this object",
+     *             "type"="string",
+     *             "format"="uuid",
+     *             "example"="e2984465-190a-4562-829e-a8cca81aa35d"
+     *         }
+     *     }
+     * )
+     *
+     * @Groups({"read"})
+     * @ORM\Id
+     * @ORM\Column(type="uuid", unique=true)
+     * @ORM\GeneratedValue(strategy="CUSTOM")
+     * @ORM\CustomIdGenerator(class="Ramsey\Uuid\Doctrine\UuidGenerator")
+     * @Groups({"read","write"})
+     * @Assert\Uuid
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"read","write"})
+     * @Assert\NotBlank
      */
     private $name;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups({"read","write"})
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *     min = 8,
+     *     max = 8,
+     *      minMessage = "Your organisation number must be {{ limit }} characters long",
+     *      maxMessage = "Your organisation number must be {{ limit }} characters long"
+     *)
      */
     private $organisationNumber;
 
     /**
      * @ORM\Column(type="text")
+     * @Groups({"read","write"})
+     * @Assert\NotBlank
      */
     private $goal;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Address", inversedBy="organisations")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Address", inversedBy="organisations", cascade="persist")
      * @ORM\JoinColumn(nullable=false)
+     * @Groups({"read","write"})
+     * @MaxDepth(1)
+     * @Assert\NotBlank
      */
     private $location;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Member", mappedBy="organisations")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Member", mappedBy="organisations", cascade="persist")
+     * @Groups({"read","write"})
+     * @MaxDepth(1)
      */
     private $members;
 
@@ -51,7 +94,7 @@ class Organisation
         $this->members = new ArrayCollection();
     }
 
-    public function getId(): ?int
+    public function getId()
     {
         return $this->id;
     }

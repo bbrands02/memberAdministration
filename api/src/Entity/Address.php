@@ -2,56 +2,103 @@
 
 namespace App\Entity;
 
+
+use ApiPlatform\Core\Annotation\ApiProperty;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Serializer\Annotation\MaxDepth;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ApiResource()
+ * @ApiResource(
+ *     normalizationContext={"groups"={"read"}, "enable_max_depth"=true},
+ *     denormalizationContext={"groups"={"write"}, "enable_max_depth"=true}
+ * )
  * @ORM\Entity(repositoryClass="App\Repository\AddressRepository")
  */
 class Address
 {
     /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+     * @var \Ramsey\Uuid\UuidInterface
+     *
+     * @ApiProperty(
+     * 	   identifier=true,
+     *     attributes={
+     *         "openapi_context"={
+     *         	   "description" = "The UUID identifier of this object",
+     *             "type"="string",
+     *             "format"="uuid",
+     *             "example"="e2984465-190a-4562-829e-a8cca81aa35d"
+     *         }
+     *     }
+     * )
+     *
+     * @Groups({"read"})
+     * @ORM\Id
+     * @ORM\Column(type="uuid", unique=true)
+     * @ORM\GeneratedValue(strategy="CUSTOM")
+     * @ORM\CustomIdGenerator(class="Ramsey\Uuid\Doctrine\UuidGenerator")
+     * @Groups({"read","write"})
+     * @Assert\Uuid
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"read","write"})
+     * @Assert\NotBlank
      */
     private $street;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"read","write"})
+     * @Assert\NotBlank
      */
     private $number;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"read","write"})
+     * @Assert\NotBlank
      */
     private $postalCode;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"read","write"})
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *     min = 1,
+     *     max = 163,
+     *     minMessage = "A settlement must have a name of at least {{ limit }} characters long",
+     *      maxMessage = "There exist no settlements with a name more than {{ limit }} characters long"
+     * )
      */
     private $settlement;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"read","write"})
+     * @Assert\NotBlank
      */
     private $province;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"read","write"})
+     * @Assert\NotBlank
      */
     private $country;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Organisation", mappedBy="location")
+     * @ORM\OneToMany(targetEntity="App\Entity\Organisation", mappedBy="location", cascade="persist")
+     * @Groups({"read","write"})
+     * @MaxDepth(1)
+     * @Assert\NotBlank
      */
     private $organisations;
 
@@ -60,7 +107,7 @@ class Address
         $this->organisations = new ArrayCollection();
     }
 
-    public function getId(): ?int
+    public function getId()
     {
         return $this->id;
     }
