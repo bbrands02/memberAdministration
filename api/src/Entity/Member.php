@@ -56,19 +56,19 @@ class Member
     private $contributionPaid;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Role", inversedBy="members")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $roles2;
-
-    /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Role", inversedBy="members1")
      */
     private $roles;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Organisation", inversedBy="members")
+     */
+    private $organisations;
+
     public function __construct()
     {
         $this->roles = new ArrayCollection();
+        $this->organisations = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -181,6 +181,32 @@ class Member
     {
         if ($this->roles->contains($roles1)) {
             $this->roles->removeElement($roles1);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Organisation[]
+     */
+    public function getOrganisations(): Collection
+    {
+        return $this->organisations;
+    }
+
+    public function addOrganisation(Organisation $organisation): self
+    {
+        if (!$this->organisations->contains($organisation)) {
+            $this->organisations[] = $organisation;
+        }
+
+        return $this;
+    }
+
+    public function removeOrganisation(Organisation $organisation): self
+    {
+        if ($this->organisations->contains($organisation)) {
+            $this->organisations->removeElement($organisation);
         }
 
         return $this;
