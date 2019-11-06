@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -57,7 +59,17 @@ class Member
      * @ORM\ManyToOne(targetEntity="App\Entity\Role", inversedBy="members")
      * @ORM\JoinColumn(nullable=false)
      */
+    private $roles2;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Role", inversedBy="members1")
+     */
     private $roles;
+
+    public function __construct()
+    {
+        $this->roles = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -148,14 +160,28 @@ class Member
         return $this;
     }
 
-    public function getRoles(): ?Role
+    /**
+     * @return Collection|Role[]
+     */
+    public function getRoles(): Collection
     {
         return $this->roles;
     }
 
-    public function setRoles(?Role $roles): self
+    public function addRoles(Role $roles1): self
     {
-        $this->roles = $roles;
+        if (!$this->roles->contains($roles1)) {
+            $this->roles[] = $roles1;
+        }
+
+        return $this;
+    }
+
+    public function removeRoles(Role $roles1): self
+    {
+        if ($this->roles->contains($roles1)) {
+            $this->roles->removeElement($roles1);
+        }
 
         return $this;
     }
