@@ -3548,7 +3548,6 @@ components:
         - street
         - number
         - postal_code
-        - settlement
         - country
         - organisations
     Address-write:
@@ -3581,7 +3580,6 @@ components:
         - street
         - number
         - postal_code
-        - settlement
         - country
         - organisations
     ExampleEntity-read:
