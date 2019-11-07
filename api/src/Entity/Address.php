@@ -70,7 +70,6 @@ class Address
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"read","write"})
-     * @Assert\NotBlank
      * @Assert\Length(
      *     min = 1,
      *     max = 188,
