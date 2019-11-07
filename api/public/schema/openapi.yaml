@@ -2935,6 +2935,587 @@ paths:
             schema:
               $ref: '#/components/schemas/Role-write'
         description: 'The updated Role resource'
+  /tags:
+    get:
+      tags:
+        - Tag
+      operationId: getTagCollection
+      summary: 'Retrieves the collection of Tag resources.'
+      responses:
+        200:
+          description: 'Tag collection response'
+          content:
+            application/hal+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag-read'
+            application/ld+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag-read'
+            application/vnd.api+json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag-read'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag-read'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag-read'
+            application/x-yaml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag-read'
+            text/csv:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag-read'
+            text/html:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag-read'
+      parameters:
+        -
+          name: page
+          in: query
+          required: false
+          description: 'The collection page number'
+          schema:
+            type: integer
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+        -
+          name: 'extend[]'
+          required: false
+          description: 'An array of nested objects to include in the return object'
+          in: query
+          schema:
+            type: array
+        -
+          name: 'fields[]'
+          required: false
+          description: 'An array of fields to return in output, wil return all fields is not supplied'
+          in: query
+          schema:
+            type: array
+        -
+          name: validOn
+          required: false
+          description: 'Returns object as valid on a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+        -
+          name: validFrom
+          required: false
+          description: 'Returns objects valid from a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+        -
+          name: validUntil
+          required: false
+          description: 'Returns objects valid until a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+    post:
+      tags:
+        - Tag
+      operationId: postTagCollection
+      summary: 'Creates a Tag resource.'
+      responses:
+        201:
+          description: 'Tag resource created'
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+            application/x-yaml:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+          links:
+            GetTagItem:
+              parameters:
+                id: '$response.body#/id'
+              operationId: getTagItem
+              description: 'The `id` value returned in the response can be used as the `id` parameter in `GET /tags/{id}`.'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+      requestBody:
+        content:
+          application/hal+json:
+            schema:
+              $ref: '#/components/schemas/Tag-write'
+          application/ld+json:
+            schema:
+              $ref: '#/components/schemas/Tag-write'
+          application/vnd.api+json:
+            schema:
+              $ref: '#/components/schemas/Tag-write'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tag-write'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Tag-write'
+          application/x-yaml:
+            schema:
+              $ref: '#/components/schemas/Tag-write'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/Tag-write'
+          text/html:
+            schema:
+              $ref: '#/components/schemas/Tag-write'
+        description: 'The new Tag resource'
+      parameters:
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+  '/tags/{id}':
+    get:
+      tags:
+        - Tag
+      operationId: getTagItem
+      summary: 'Retrieves a Tag resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+        -
+          name: 'extend[]'
+          required: false
+          description: 'An array of nested objects to include in the return object'
+          in: query
+          schema:
+            type: array
+        -
+          name: 'fields[]'
+          required: false
+          description: 'An array of fields to return in output, wil return all fields is not supplied'
+          in: query
+          schema:
+            type: array
+        -
+          name: validOn
+          required: false
+          description: 'Returns object as valid on a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+        -
+          name: validFrom
+          required: false
+          description: 'Returns objects valid from a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+        -
+          name: validUntil
+          required: false
+          description: 'Returns objects valid until a given date time'
+          schema:
+            type: string
+            format: date-time
+          in: query
+      responses:
+        200:
+          description: 'Tag resource response'
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+            application/x-yaml:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+        404:
+          description: 'Resource not found'
+    delete:
+      tags:
+        - Tag
+      operationId: deleteTagItem
+      summary: 'Removes the Tag resource.'
+      responses:
+        204:
+          description: 'Tag resource deleted'
+        404:
+          description: 'Resource not found'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+    put:
+      tags:
+        - Tag
+      operationId: putTagItem
+      summary: 'Replaces the Tag resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+      responses:
+        200:
+          description: 'Tag resource updated'
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+            application/x-yaml:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+      requestBody:
+        content:
+          application/hal+json:
+            schema:
+              $ref: '#/components/schemas/Tag-write'
+          application/ld+json:
+            schema:
+              $ref: '#/components/schemas/Tag-write'
+          application/vnd.api+json:
+            schema:
+              $ref: '#/components/schemas/Tag-write'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tag-write'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Tag-write'
+          application/x-yaml:
+            schema:
+              $ref: '#/components/schemas/Tag-write'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/Tag-write'
+          text/html:
+            schema:
+              $ref: '#/components/schemas/Tag-write'
+        description: 'The updated Tag resource'
+    patch:
+      tags:
+        - Tag
+      operationId: patchTagItem
+      summary: 'Updates the Tag resource.'
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        -
+          name: Authorization
+          description: 'The JWT of the entity performing the request'
+          in: header
+        -
+          name: API-Version
+          description: 'The version of the API conform [Landelijke API-strategie.](https://geonovum.github.io/KP-APIs/#versioning)'
+          example: 1.0.1
+          in: header
+        -
+          name: X-NLX-Logrecord-ID
+          description: 'A  globally unique id of the request, which makes a request traceable throughout the network.'
+          in: header
+        -
+          name: X-NLX-Request-Process-Id
+          description: 'A process id for purpose registration (doelbinding)'
+          in: header
+        -
+          name: X-NLX-Request-Data-Elements
+          description: 'A list of requested data elements'
+          in: header
+        -
+          name: X-NLX-Request-Data-Subject
+          description: 'A key-value list of data subjects related to this request. e.g. `bsn=12345678, kenteken=ab-12-fg`'
+          in: header
+        -
+          name: X-Audit-Clarification
+          description: 'A clarification as to why a request has been made  (doelbinding)'
+          in: header
+      responses:
+        200:
+          description: 'Tag resource updated'
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+            application/x-yaml:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/Tag-read'
+        400:
+          description: 'Invalid input'
+        404:
+          description: 'Resource not found'
+      requestBody:
+        content:
+          application/hal+json:
+            schema:
+              $ref: '#/components/schemas/Tag-write'
+          application/ld+json:
+            schema:
+              $ref: '#/components/schemas/Tag-write'
+          application/vnd.api+json:
+            schema:
+              $ref: '#/components/schemas/Tag-write'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tag-write'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Tag-write'
+          application/x-yaml:
+            schema:
+              $ref: '#/components/schemas/Tag-write'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/Tag-write'
+          text/html:
+            schema:
+              $ref: '#/components/schemas/Tag-write'
+        description: 'The updated Tag resource'
 components:
   schemas:
     Address-read:
@@ -2967,7 +3548,6 @@ components:
         - street
         - number
         - postal_code
-        - settlement
         - country
         - organisations
     Address-write:
@@ -3000,7 +3580,6 @@ components:
         - street
         - number
         - postal_code
-        - settlement
         - country
         - organisations
     ExampleEntity-read:
@@ -3055,14 +3634,14 @@ components:
           type: string
         contribution_paid:
           type: boolean
-        roles:
-          type: array
-          items:
-            $ref: '#/components/schemas/Role-read'
         organisations:
           type: array
           items:
             $ref: '#/components/schemas/Organisation-read'
+        roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/Role-read'
       required:
         - first_name
         - last_name
@@ -3071,8 +3650,8 @@ components:
         - user_name
         - pass_word
         - contribution_paid
-        - roles
         - organisations
+        - roles
     Member-write:
       type: object
       description: ''
@@ -3098,14 +3677,14 @@ components:
           type: string
         contribution_paid:
           type: boolean
-        roles:
-          type: array
-          items:
-            $ref: '#/components/schemas/Role-write'
         organisations:
           type: array
           items:
             $ref: '#/components/schemas/Organisation-write'
+        roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/Role-write'
       required:
         - first_name
         - last_name
@@ -3114,8 +3693,8 @@ components:
         - user_name
         - pass_word
         - contribution_paid
-        - roles
         - organisations
+        - roles
     Organisation-read:
       type: object
       description: ''
@@ -3230,6 +3809,42 @@ components:
         - can_edit_other_members
         - can_edit_contribution_status
         - members
+    Tag-read:
+      type: object
+      description: ''
+      properties:
+        id:
+          description: 'The UUID identifier of this object'
+          type: string
+          format: uuid
+          example: e2984465-190a-4562-829e-a8cca81aa35d
+          readOnly: true
+        name:
+          type: string
+        members:
+          type: array
+          items:
+            $ref: '#/components/schemas/Member-read'
+      required:
+        - name
+    Tag-write:
+      type: object
+      description: ''
+      properties:
+        id:
+          description: 'The UUID identifier of this object'
+          type: string
+          format: uuid
+          example: e2984465-190a-4562-829e-a8cca81aa35d
+          readOnly: true
+        name:
+          type: string
+        members:
+          type: array
+          items:
+            $ref: '#/components/schemas/Member-write'
+      required:
+        - name
 host: irc.zaakonline.nl
 servers:
   -

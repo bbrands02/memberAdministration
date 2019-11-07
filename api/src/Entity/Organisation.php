@@ -3,14 +3,16 @@
 namespace App\Entity;
 
 
-use ApiPlatform\Core\Annotation\ApiProperty;
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Annotation\ApiProperty;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Ramsey\Uuid\UuidInterface;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Serializer\Annotation\MaxDepth;
 use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ApiResource(
@@ -79,19 +81,26 @@ class Organisation
      * @Groups({"read","write"})
      * @MaxDepth(1)
      * @Assert\NotBlank
+     * @Assert\Valid
      */
     private $location;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Member", mappedBy="organisations", cascade="persist")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Member", mappedBy="organisations")
      * @Groups({"read","write"})
      * @MaxDepth(1)
      */
     private $members;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Role", mappedBy="organisations", cascade="persist")
+     */
+    private $roles;
+
     public function __construct()
     {
         $this->members = new ArrayCollection();
+        $this->roles = new ArrayCollection();
     }
 
     public function getId()
@@ -170,6 +179,37 @@ class Organisation
         if ($this->members->contains($member)) {
             $this->members->removeElement($member);
             $member->removeOrganisation($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Role[]
+     */
+    public function getRoles(): Collection
+    {
+        return $this->roles;
+    }
+
+    public function addRole(Role $role): self
+    {
+        if (!$this->roles->contains($role)) {
+            $this->roles[] = $role;
+            $role->setOrganisations($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRole(Role $role): self
+    {
+        if ($this->roles->contains($role)) {
+            $this->roles->removeElement($role);
+            // set the owning side to null (unless already changed)
+            if ($role->getOrganisations() === $this) {
+                $role->setOrganisations(null);
+            }
         }
 
         return $this;

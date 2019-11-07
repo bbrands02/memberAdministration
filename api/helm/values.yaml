@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 settings:
-  registryBase: docker.io/conduction
+  registryBase: docker.io/bbrands01
   projectName: mm
   env: dev
   debug: 1
