@@ -134,6 +134,11 @@ class Member
      */
     private $tags;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $membershipEndDate;
+
     public function __construct()
     {
         $this->roles = new ArrayCollection();
@@ -332,6 +337,18 @@ class Member
             $this->tags->removeElement($tag);
             $tag->removeMember($this);
         }
+
+        return $this;
+    }
+
+    public function getMembershipEndDate(): ?\DateTimeInterface
+    {
+        return $this->membershipEndDate;
+    }
+
+    public function setMembershipEndDate(\DateTimeInterface $membershipEndDate): self
+    {
+        $this->membershipEndDate = $membershipEndDate;
 
         return $this;
     }
