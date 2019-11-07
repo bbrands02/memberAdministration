@@ -3055,14 +3055,14 @@ components:
           type: string
         contribution_paid:
           type: boolean
-        roles:
-          type: array
-          items:
-            $ref: '#/components/schemas/Role-read'
         organisations:
           type: array
           items:
             $ref: '#/components/schemas/Organisation-read'
+        roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/Role-read'
       required:
         - first_name
         - last_name
@@ -3071,8 +3071,8 @@ components:
         - user_name
         - pass_word
         - contribution_paid
-        - roles
         - organisations
+        - roles
     Member-write:
       type: object
       description: ''
@@ -3098,14 +3098,14 @@ components:
           type: string
         contribution_paid:
           type: boolean
-        roles:
-          type: array
-          items:
-            $ref: '#/components/schemas/Role-write'
         organisations:
           type: array
           items:
             $ref: '#/components/schemas/Organisation-write'
+        roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/Role-write'
       required:
         - first_name
         - last_name
@@ -3114,8 +3114,8 @@ components:
         - user_name
         - pass_word
         - contribution_paid
-        - roles
         - organisations
+        - roles
     Organisation-read:
       type: object
       description: ''

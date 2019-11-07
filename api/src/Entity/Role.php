@@ -62,31 +62,45 @@ class Role
     /**
      * @ORM\Column(type="boolean")
      * @Groups({"read","write"})
-     * @Assert\NotBlank
+     * @Assert\NotNull
      */
     private $canViewOtherMembers;
 
     /**
      * @ORM\Column(type="boolean")
      * @Groups({"read","write"})
-     * @Assert\NotBlank
+     * @Assert\NotNull
      */
     private $canEditOtherMembers;
 
     /**
      * @ORM\Column(type="boolean")
      * @Groups({"read","write"})
-     * @Assert\NotBlank
+     * @Assert\NotNull
      */
     private $canEditContributionStatus;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Member", mappedBy="roles1", cascade="persist")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Member", mappedBy="roles", cascade="persist")
      * @Groups({"read","write"})
      * @MaxDepth(1)
      * @Assert\NotBlank
      */
     private $members;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Organisation")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $organisations;
+
+//    /**
+//     * @ORM\ManyToMany(targetEntity="App\Entity\Member", mappedBy="roles", cascade="persist")
+//     * @Groups({"read","write"})
+//     * @MaxDepth(1)
+//     * @Assert\NotBlank
+//     */
+//    private $members;
 
     public function __construct()
     {
@@ -158,7 +172,6 @@ class Role
         return $this;
     }
 
-
     /**
      * @return Collection|Member[]
      */
@@ -167,23 +180,64 @@ class Role
         return $this->members;
     }
 
-    public function addMembers(Member $members): self
+    public function addMember(Member $member): self
     {
-        if (!$this->members->contains($members)) {
-            $this->members[] = $members;
-            $members->addRoles($this);
+        if (!$this->members->contains($member)) {
+            $this->members[] = $member;
+            $member->addRole($this);
         }
 
         return $this;
     }
 
-    public function removeMembers(Member $members): self
+    public function removeMember(Member $member): self
     {
-        if ($this->members->contains($members)) {
-            $this->members->removeElement($members);
-            $members->removeRoles($this);
+        if ($this->members->contains($member)) {
+            $this->members->removeElement($member);
+            $member->removeRole($this);
         }
 
         return $this;
     }
+
+    public function getOrganisations(): ?Organisation
+    {
+        return $this->organisations;
+    }
+
+    public function setOrganisations(?Organisation $organisations): self
+    {
+        $this->organisations = $organisations;
+
+        return $this;
+    }
+
+//
+//    /**
+//     * @return Collection|Member[]
+//     */
+//    public function getMembers(): Collection
+//    {
+//        return $this->members;
+//    }
+//
+//    public function addMembers(Member $members): self
+//    {
+//        if (!$this->members->contains($members)) {
+//            $this->members[] = $members;
+//            $members->addRoles($this);
+//        }
+//
+//        return $this;
+//    }
+//
+//    public function removeMembers(Member $members): self
+//    {
+//        if ($this->members->contains($members)) {
+//            $this->members->removeElement($members);
+//            $members->removeRoles($this);
+//        }
+//
+//        return $this;
+//    }
 }
