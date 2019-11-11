@@ -1,0 +1,9 @@
+{
+	"type" : "project",
+	"license" : "proprietary",
+	"require" : {
+		"guzzlehttp/guzzle": "~6.0"
+	},
+	"require-dev" : {
+	}
+}
