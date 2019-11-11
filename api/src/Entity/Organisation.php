@@ -97,10 +97,16 @@ class Organisation
      */
     private $roles;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Tag", mappedBy="organisation", orphanRemoval=true)
+     */
+    private $tags;
+
     public function __construct()
     {
         $this->members = new ArrayCollection();
         $this->roles = new ArrayCollection();
+        $this->tags = new ArrayCollection();
     }
 
     public function getId()
@@ -209,6 +215,37 @@ class Organisation
             // set the owning side to null (unless already changed)
             if ($role->getOrganisations() === $this) {
                 $role->setOrganisations(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Tag[]
+     */
+    public function getTags(): Collection
+    {
+        return $this->tags;
+    }
+
+    public function addTag(Tag $tag): self
+    {
+        if (!$this->tags->contains($tag)) {
+            $this->tags[] = $tag;
+            $tag->setOrganisation($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTag(Tag $tag): self
+    {
+        if ($this->tags->contains($tag)) {
+            $this->tags->removeElement($tag);
+            // set the owning side to null (unless already changed)
+            if ($tag->getOrganisation() === $this) {
+                $tag->setOrganisation(null);
             }
         }
 
