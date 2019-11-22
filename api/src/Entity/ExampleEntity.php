@@ -16,9 +16,21 @@ use Symfony\Component\Serializer\Annotation\MaxDepth;
 use App\Filter\LikeFilter;
 
 /**
+ * This is an example entity
+ * 
+ * With an adtional description, all in all its pritty nice [url](www.google.nl)
+ * 
  * @ApiResource(
  *     normalizationContext={"groups"={"read"}, "enable_max_depth"=true},
- *     denormalizationContext={"groups"={"write"}, "enable_max_depth"=true}
+ *     denormalizationContext={"groups"={"write"}, "enable_max_depth"=true},
+ *     itemOperations={
+ *     		"get","put","delete",
+ *     		"audittrail"={
+ *     			"method"="GET",
+ *     			"name"="Provides an auditrail for this entity",
+ *     			"description"="Provides an auditrail for this entity"
+ *     		}
+ *     }
  * )
  * @ORM\Entity(repositoryClass="App\Repository\ExampleEntityRepository")
  * @Gedmo\Loggable
@@ -77,6 +89,19 @@ class ExampleEntity
      */
     private $description;
 
+    /**
+	 * @var string $camelCase Proof that we camel case our api
+	 * @example Best api ever
+	 * 
+	 * @Assert\Length(
+	 *      max = 2555
+	 * )
+     * @Gedmo\Versioned
+	 * @Groups({"read","write"})
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $camelCase;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -102,6 +127,18 @@ class ExampleEntity
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getCamelCase(): ?string
+    {
+        return $this->camelCase;
+    }
+
+    public function setCamelCase(?string $camelCase): self
+    {
+        $this->camelCase = $camelCase;
 
         return $this;
     }
