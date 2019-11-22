@@ -1,40 +1,49 @@
 # Design Considerations
 
-This component was designed inline with the [NL API Strategie](https://docs.geostandaarden.nl/api/API-Strategie), [NORA](https://www.noraonline.nl/wiki/Standaarden), [vng.cloud](https://zaakgerichtwerken.vng.cloud/themas/index), [commonground principles](https://vng.nl/onderwerpenindex/bestuur/samen-organiseren-2019/common-ground) and international standards. 
+This component was designed in line with the [NL API Strategie](https://docs.geostandaarden.nl/api/API-Strategie), [NORA](https://www.noraonline.nl/wiki/Standaarden), [vng.cloud](https://zaakgerichtwerken.vng.cloud/themas/index), [commonground principles](https://vng.nl/onderwerpenindex/bestuur/samen-organiseren-2019/common-ground) and international standards. 
 
-The spefic goal of this component is to provide a common architecture for common ground components as such the common ground principles are leading in design choices, and within those principles technological invoation and international complyancy is deemd most inportant. WE DO NOT WANT TO MAKE CONSESIONS TO CURRENT INFRASTRUCTURE. As such the component might differ on  [NL API Strategie](https://docs.geostandaarden.nl/api/API-Strategie), [NORA](https://www.noraonline.nl/wiki/Standaarden), [vng.cloud](https://zaakgerichtwerken.vng.cloud/themas/index) and other standards if they are deemed incompatible or out of line with international standards. 
+The specific goal of this component is to provide a common architecture for common ground components as such the common ground principles are leading in design choices, and within those principles technological invocation and international compliancy is deemed most important. **We do not want to mace consessions to the current infrastructure.** As such the component might differ on  [NL API Strategie](https://docs.geostandaarden.nl/api/API-Strategie), [NORA](https://www.noraonline.nl/wiki/Standaarden), [vng.cloud](https://zaakgerichtwerken.vng.cloud/themas/index) and other standards if they are deemed incompatible or out of line with international standards. 
+
+The European factor
+-------
+The proto-component isn't just a Dutch Component, it is in essence a dutch translation of european components, nowhere is this more obvious than in the core code. Our component is based on [API Platform](https://api-platform.com/) an API specific version of the symfony framework. This framework is build by the lovely people of []() and is build with support of the European Commission trough the [EU-FOSSA Hackathon](https://ec.europa.eu/info/news/first-eu-fossa-hackathon-it-happened-2019-may-03_en) and Digital Ocean trough [Hacktoberfest](https://hacktoberfest.digitalocean.com/).
+
+But it doesn't just end there. The [varnish container](https://hub.docker.com/r/eeacms/varnish/) that we use to speed up the API responce it build and maintained by [EEA]() (The European Environment Agency) and the development team at conduction itself is attached to the [Odyssey program](https://www.odyssey.org/) and originated from the [startupinresidence](https://startupinresidence.com/) program. 
+
+So you could say that both change and a european perspective is in our blood.
+
 
 Domain Build-up and routing
 -------
-By convention the component assumes that you follow the common ground domain name build up, meaning {enviroment}.{component}.{rest of domain}. That means that only the first two url parts are used for routing. It is also assumed that when no envirment is supplied the production enviroment should be offerd E.g. a propper domain for the production API of the verzoeken registratie component would be prod.vrc.zaakonline.nl but it should also be reachable under vrc.zaakonline.nl. The proper location for the development enviroment shoud always be dev.vrc.zaakonlin.nl
+By convention the component assumes that you follow the common ground domain name build up, meaning {environment}.{component}.{rest of domain}. That means that only the first two url parts are used for routing. It is also assumed that when no environment is supplied the production environment should be offered E.g. a proper domain for the production API of the verzoeken registratie component would be prod.vrc.zaakonline.nl but it should also be reachable under vrc.zaakonline.nl. The proper location for the development environment should always be dev.vrc.zaakonlin.nl
 
-Enviroments and namespacing
+Environments and namespacing
 -------
-We assume that for that you want to run several enviroments for development purposes. We identify the following namespaces for support.
+We assume that for that you want to run several environments for development purposes. We identify the following namespaces for support.
 - prod (Production)
 - acce (Acceptation)
 - stag (Staging)
 - test (Testing)
 - dev (Development)
 
-Becouse we base the commonground infastructure on kubernetes, and we want to keep a hard sepperation between enviroment we also assume that you are using your enviroment as a namespace
+Because we base the common ground infrastructure on kubernetes, and we want to keep a hard separation between environment we also assume that you are using your environment as a namespace
 
-Symfony libary managment gives us the optoin to define the libbarys on a per envirmoent base, you can find that definition in the [bundle config](api/config/bundles.php)
+Symfony library management gives us the option to define the libraries on a per environment base, you can find that definition in the [bundle config](api/config/bundles.php)
 
-Besides the API envormiments the component also ships with aditional tools/enviroments but those are not meant to be deployed
+Besides the API environments the component also ships with additional tools/environments but those are not meant to be deployed
 - client (An react client frontend)
-- admin ( An read admin interface)
+- admin (An read admin interface)
 
-On the local development docker deploy the client enviroment is used as default in stead of the production version of the api.
+On the local development docker deploy the client environment is used as default instead of the production version of the api.
 
-Loging Headers (NLX Audit trail)
+Logging Headers (NLX Audit trail)
 -------
 @todo update, a reaction about this has been given by the NLX team.
 
-We inherit a couple of headers from the transaction logging within the [NLX schema](https://docs.nlx.io/further-reading/transaction-logs/), we strongly discurage the use of the `X-NLX-Request-Data-Subject` header as it might allow private data (such as BSN's) to show up in logging.
+We inherit a couple of headers from the transaction logging within the [NLX schema](https://docs.nlx.io/further-reading/transaction-logs/), we strongly discourage the use of the `X-NLX-Request-Data-Subject` header as it might allow private data (such as BSNs) to show up in logging.
 
 __solution__
-The follwoing X-NLX headers have been implemented `X-NLX-Logrecord-ID`,`X-NLX-Request-Process-Id`,`X-NLX-Request-Data-Elements` and `X-NLX-Request-Data-Subject`, these are tied to the internal audit trail (see audit trail for more information), and `X-Audit-Toelichting` (from the ZGW API's) is implemented as `X-Audit-Clarification`
+The following X-NLX headers have been implemented `X-NLX-Logrecord-ID`,`X-NLX-Request-Process-Id`,`X-NLX-Request-Data-Elements` and `X-NLX-Request-Data-Subject`, these are tied to the internal audit trail (see audit trail for more information), and `X-Audit-Toelichting` (from the ZGW APIs) is implemented as `X-Audit-Clarification`
 
 Api versioning
 -------

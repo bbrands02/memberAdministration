@@ -60,6 +60,12 @@ class Tag
      */
     private $members;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Organisation", inversedBy="tags")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $organisation;
+
     public function __construct()
     {
         $this->members = new ArrayCollection();
@@ -104,6 +110,18 @@ class Tag
         if ($this->members->contains($member)) {
             $this->members->removeElement($member);
         }
+
+        return $this;
+    }
+
+    public function getOrganisation(): ?Organisation
+    {
+        return $this->organisation;
+    }
+
+    public function setOrganisation(?Organisation $organisation): self
+    {
+        $this->organisation = $organisation;
 
         return $this;
     }
