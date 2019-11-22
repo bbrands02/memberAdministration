@@ -81,22 +81,22 @@ class Member
      */
     private $email;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     * @Groups({"read","write"})
-     * @Assert\NotBlank
-     */
-    private $userName;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     * @Groups({"read","write"})
-     * @Assert\NotBlank
-     * SecurityAssert\UserPassword(
-     *     message = "Wrong password"
-     * )
-     */
-    private $passWord;
+//    /**
+//     * @ORM\Column(type="string", length=255)
+//     * @Groups({"read","write"})
+//     * @Assert\NotBlank
+//     */
+//    private $userName;
+//
+//    /**
+//     * @ORM\Column(type="string", length=255)
+//     * @Groups({"read","write"})
+//     * @Assert\NotBlank
+//     * SecurityAssert\UserPassword(
+//     *     message = "Wrong password"
+//     * )
+//     */
+//    private $passWord;
 
     /**
      * @ORM\Column(type="boolean")
@@ -105,13 +105,6 @@ class Member
      */
     private $contributionPaid;
 
-//    /**
-//     * @ORM\ManyToMany(targetEntity="App\Entity\Role", inversedBy="members", cascade="persist")
-//     * @Groups({"read","write"})
-//     * @MaxDepth(1)
-//     * @Assert\NotBlank
-//     */
-//    private $roles;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Organisation", inversedBy="members", cascade="persist")
